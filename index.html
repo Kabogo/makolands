@@ -20,6 +20,7 @@
             font-family: 'Poppins', sans-serif;
             color: #333;
             overflow-x: hidden;
+            background-color: #f9fafb;
         }
         
         h1, h2, h3, h4, h5 {
@@ -61,16 +62,16 @@
         }
         
         .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('https://images.unsplash.com/photo-1592595896551-12b371d546d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    color: white;
-    position: relative;
-    padding: 0 20px;
-    text-align: left;
-}
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1592595896551-12b371d546d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            padding: 0 20px;
+            text-align: left;
+        }
         
         .hero-content {
             max-width: 700px;
@@ -487,11 +488,180 @@
         .delay-3 {
             animation-delay: 0.6s;
         }
+
+        /* New Team Section */
+        .team {
+            padding: 100px 0;
+            background-color: #fff;
+        }
         
+        .team-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .team-img {
+            height: 280px;
+            overflow: hidden;
+        }
+        
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .team-card:hover .team-img img {
+            transform: scale(1.05);
+        }
+        
+        .team-content {
+            padding: 25px 20px;
+        }
+        
+        .team-content h4 {
+            margin-bottom: 5px;
+        }
+        
+        .position {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .team-social {
+            margin-top: 15px;
+        }
+        
+        .team-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+        
+        .team-social a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        /* New Investment Section */
+        .investment {
+            padding: 100px 0;
+            background-color: #f0f7f0;
+        }
+        
+        .investment-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .investment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .investment-header {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .investment-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .investment-card:hover .investment-header img {
+            transform: scale(1.1);
+        }
+        
+        .investment-content {
+            padding: 25px;
+        }
+        
+        .investment-content h4 {
+            margin-bottom: 15px;
+        }
+        
+        .investment-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* Property Search */
+        .property-search {
+            background: var(--primary);
+            padding: 30px 0;
+            margin: -50px auto 80px;
+            border-radius: 15px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            max-width: 1200px;
+        }
+        
+        .search-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .search-form .form-control {
+            flex: 1 1 200px;
+            margin-bottom: 0;
+        }
+        
+        .search-form .btn {
+            flex: 0 0 auto;
+        }
+
         /* Responsive Adjustments */
         @media (max-width: 991px) {
             .hero h1 {
                 font-size: 2.8rem;
+            }
+            .property-search {
+                margin: -30px auto 60px;
             }
         }
         
@@ -505,6 +675,9 @@
             .stat-box {
                 margin-bottom: 40px;
             }
+            .search-form .btn {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -512,7 +685,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">MAKO <span>Lands</span></a>
+            <a class="navbar-brand" href="#">MAKKO <span>LANDS</span> SOLUTIONS LIMITED</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -521,6 +694,8 @@
                     <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#properties">Properties</a></li>
                     <li class="nav-item"><a class="nav-link" href="#regions">Regions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#investment">Investment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Our Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -538,11 +713,43 @@
                 <p>MAKO Lands offers the best real estate investment opportunities with prime locations, competitive pricing, and exceptional development services across Uganda.</p>
                 <div class="d-flex flex-wrap gap-3">
                     <a href="#properties" class="btn btn-primary">Explore Properties</a>
-                    <a href="#regions" class="btn btn-secondary">Discover Regions</a>
+                    <a href="#investment" class="btn btn-secondary">Investment Plans</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Property Search -->
+    <div class="container">
+        <div class="property-search">
+            <div class="search-form">
+                <select class="form-control">
+                    <option>Property Type</option>
+                    <option>Residential</option>
+                    <option>Commercial</option>
+                    <option>Land</option>
+                    <option>Luxury</option>
+                </select>
+                <select class="form-control">
+                    <option>Location</option>
+                    <option>Kampala</option>
+                    <option>Entebbe</option>
+                    <option>Jinja</option>
+                    <option>Mbarara</option>
+                    <option>Gulu</option>
+                    <option>Fort Portal</option>
+                </select>
+                <select class="form-control">
+                    <option>Price Range</option>
+                    <option>Under $50,000</option>
+                    <option>$50,000 - $100,000</option>
+                    <option>$100,000 - $200,000</option>
+                    <option>Over $200,000</option>
+                </select>
+                <button class="btn btn-secondary">Search Properties</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Properties Section -->
     <section id="properties" class="py-5">
@@ -772,110 +979,170 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Mbarara -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Section -->
+    <section id="investment" class="investment">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Investment Opportunities</h2>
+                <p class="text-muted">Premium real estate investment plans with guaranteed returns</p>
+            </div>
+            
+            <div class="row">
                 <div class="col-lg-4 col-md-6">
-                    <div class="region-card animate">
-                        <div class="region-header">
-                            <img src="https://images.unsplash.com/photo-1560448205-97abe7378152?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Mbarara">
-                            <h3 class="region-name">Mbarara</h3>
+                    <div class="investment-card animate">
+                        <div class="investment-header">
+                            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Starter Plan">
                         </div>
-                        <div class="region-content">
-                            <div class="property-item">
-                                <div class="property-info">
-                                    <h5>Ranch-Style Home</h5>
-                                    <p><i class="fas fa-map-marker-alt me-2"></i>Kakiika</p>
+                        <div class="investment-content">
+                            <h4>Starter Plan</h4>
+                            <p>Perfect for new investors looking to enter the real estate market with minimal capital.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Minimum investment: $5,000</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> 7% annual return</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> 1-2 year terms</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Monthly interest payments</li>
+                            </ul>
+                            <div class="investment-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">7%</div>
+                                    <div class="stat-label">Annual Return</div>
                                 </div>
-                                <div class="property-price">$65,000</div>
-                            </div>
-                            <div class="property-item">
-                                <div class="property-info">
-                                    <h5>Modern Townhouse</h5>
-                                    <p><i class="fas fa-map-marker-alt me-2"></i>Rwebikoona</p>
+                                <div class="stat-item">
+                                    <div class="stat-value">1-2</div>
+                                    <div class="stat-label">Years</div>
                                 </div>
-                                <div class="property-price">$85,000</div>
                             </div>
-                            <div class="property-item">
-                                <div class="property-info">
-                                    <h5>Farmhouse with Land</h5>
-                                    <p><i class="fas fa-map-marker-alt me-2"></i>Kashari</p>
+                            <a href="#" class="btn btn-primary w-100 mt-3">Invest Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="investment-card animate delay-1">
+                        <div class="investment-header">
+                            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Growth Plan">
+                        </div>
+                        <div class="investment-content">
+                            <h4>Growth Plan</h4>
+                            <p>Ideal for experienced investors seeking balanced growth and income.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Minimum investment: $20,000</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> 10% annual return</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> 3-5 year terms</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Quarterly dividends</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Property appreciation benefits</li>
+                            </ul>
+                            <div class="investment-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">10%</div>
+                                    <div class="stat-label">Annual Return</div>
                                 </div>
-                                <div class="property-price">$120,000</div>
+                                <div class="stat-item">
+                                    <div class="stat-value">3-5</div>
+                                    <div class="stat-label">Years</div>
+                                </div>
                             </div>
-                            <div class="text-center mt-4">
-                                <a href="#" class="btn btn-outline-primary">View 7 Properties</a>
+                            <a href="#" class="btn btn-primary w-100 mt-3">Invest Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="investment-card animate delay-2">
+                        <div class="investment-header">
+                            <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Premium Plan">
+                        </div>
+                        <div class="investment-content">
+                            <h4>Premium Plan</h4>
+                            <p>For high-net-worth investors looking for maximum returns and premium benefits.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Minimum investment: $50,000</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> 15% annual return</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> 5+ year terms</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Bi-annual dividends</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> VIP property tours</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Priority selection</li>
+                            </ul>
+                            <div class="investment-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">15%</div>
+                                    <div class="stat-label">Annual Return</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">5+</div>
+                                    <div class="stat-label">Years</div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-primary w-100 mt-3">Invest Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Our Team</h2>
+                <p class="text-muted">Meet the experts behind MAKO Lands</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card animate">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Team Member">
+                        </div>
+                        <div class="team-content">
+                            <h4>Mark Okello</h4>
+                            <span class="position">Founder & CEO</span>
+                            <p>With over 15 years of experience in real estate development, Mark has transformed MAKO Lands into Uganda's premier property company.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Gulu -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="region-card animate delay-1">
-                        <div class="region-header">
-                            <img src="https://images.unsplash.com/photo-1605283176568-9b41fde3672e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Gulu">
-                            <h3 class="region-name">Gulu</h3>
+                    <div class="team-card animate delay-1">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Team Member">
                         </div>
-                        <div class="region-content">
-                            <div class="property-item">
-                                <div class="property-info">
-                                    <h5>Modern Bungalow</h5>
-                                    <p><i class="fas fa-map-marker-alt me-2"></i>Layibi</p>
-                                </div>
-                                <div class="property-price">$55,000</div>
-                            </div>
-                            <div class="property-item">
-                                <div class="property-info">
-                                    <h5>Commercial Property</h5>
-                                    <p><i class="fas fa-map-marker-alt me-2"></i>Central Business</p>
-                                </div>
-                                <div class="property-price">$95,000</div>
-                            </div>
-                            <div class="property-item">
-                                <div class="property-info">
-                                    <h5>Residential Plot</h5>
-                                    <p><i class="fas fa-map-marker-alt me-2"></i>Pece</p>
-                                </div>
-                                <div class="property-price">$25,000</div>
-                            </div>
-                            <div class="text-center mt-4">
-                                <a href="#" class="btn btn-outline-primary">View 5 Properties</a>
+                        <div class="team-content">
+                            <h4>Sarah Nakato</h4>
+                            <span class="position">Head of Sales</span>
+                            <p>Sarah leads our sales team with a decade of experience in property marketing and client relations across East Africa.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Fort Portal -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="region-card animate delay-2">
-                        <div class="region-header">
-                            <img src="https://images.unsplash.com/photo-1579033461380-adb47c3eb938?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Fort Portal">
-                            <h3 class="region-name">Fort Portal</h3>
+                    <div class="team-card animate delay-2">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Team Member">
                         </div>
-                        <div class="region-content">
-                            <div class="property-item">
-                                <div class="property-info">
-                                    <h5>Mountain View Home</h5>
-                                    <p><i class="fas fa-map-marker-alt me-2"></i>Kabundaire</p>
-                                </div>
-                                <div class="property-price">$75,000</div>
-                            </div>
-                            <div class="property-item">
-                                <div class="property-info">
-                                    <h5>Tea Estate Bungalow</h5>
-                                    <p><i class="fas fa-map-marker-alt me-2"></i>Kabarole</p>
-                                </div>
-                                <div class="property-price">$110,000</div>
-                            </div>
-                            <div class="property-item">
-                                <div class="property-info">
-                                    <h5>Eco-Friendly Cottage</h5>
-                                    <p><i class="fas fa-map-marker-alt me-2"></i>Rwenzori Foothills</p>
-                                </div>
-                                <div class="property-price">$65,000</div>
-                            </div>
-                            <div class="text-center mt-4">
-                                <a href="#" class="btn btn-outline-primary">View 4 Properties</a>
+                        <div class="team-content">
+                            <h4>David Ochieng</h4>
+                            <span class="position">Development Director</span>
+                            <p>David oversees all development projects, ensuring quality construction and timely delivery of our properties.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
                             </div>
                         </div>
                     </div>
@@ -896,7 +1163,7 @@
                 <div class="col-lg-6">
                     <h2 class="section-title">About MAKO Lands</h2>
                     <p class="lead">Transforming Uganda's real estate landscape since 2005</p>
-                    <p>MAKO Lands is a premier real estate company in Uganda specializing in land acquisition, development, and property management. We pride ourselves on delivering exceptional value to our clients through innovative solutions and unparalleled service.</p>
+                    <p>MAKKO Lands is a premier real estate company in Uganda specializing in land acquisition, development, and property management. We pride ourselves on delivering exceptional value to our clients through innovative solutions and unparalleled service.</p>
                     <p>Our team of experts combines local knowledge with international standards to create sustainable communities and profitable investment opportunities. From land leveling with modern tractors to constructing premium residences, we handle every aspect of real estate development.</p>
                     <div class="mt-4">
                         <a href="#" class="btn btn-primary me-2">Our Mission</a>
@@ -1229,6 +1496,17 @@
                 if (!e.target.closest('a')) {
                     const regionName = this.querySelector('.region-name').textContent;
                     alert(`Showing all properties in ${regionName}`);
+                }
+            });
+        });
+
+        // Investment plan selection
+        const investmentCards = document.querySelectorAll('.investment-card');
+        investmentCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (!e.target.closest('a')) {
+                    const planName = this.querySelector('h4').textContent;
+                    alert(`You've selected the ${planName}. Our investment team will contact you shortly.`);
                 }
             });
         });
